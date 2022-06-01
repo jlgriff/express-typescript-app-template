@@ -1,9 +1,9 @@
-import express, { Application } from "express";
-import { PORT } from "./configs";
+import express, { Application } from 'express';
+import { PORT } from './configs';
 
-import { Route } from "./interfaces/route";
-import error from "./middleware/error";
-import { log } from "./utilities/logger";
+import { Route } from './interfaces/route';
+import errorMiddleware from './middleware/error';
+import log from './utilities/logger';
 
 const application = (routes: Route[]): Application => {
   const app = express();
@@ -11,11 +11,11 @@ const application = (routes: Route[]): Application => {
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
 
-  routes.forEach((route) => app.use("/", route.router));
+  routes.forEach((route) => app.use('/', route.router));
 
-  app.use(error);
+  app.use(errorMiddleware);
 
-  log("info", `Application is listening on port ${PORT}`);
+  log('info', `Application is listening on port ${PORT}`);
 
   return app;
 };

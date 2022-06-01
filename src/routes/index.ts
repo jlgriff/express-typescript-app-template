@@ -1,13 +1,13 @@
-import { Router } from "express";
-import indexController from "../controllers";
-import { Route } from "../interfaces/route";
+import { Router } from 'express';
+import indexController from '../controllers';
+import { Route } from '../interfaces/route';
 
 const indexRoute = (): Route => {
-  const path = "/";
+  const path = '/';
   const router = Router();
   router.get(path, indexController);
 
-  return { path: path, router: router };
+  return { path, router };
 };
 
 export default indexRoute;

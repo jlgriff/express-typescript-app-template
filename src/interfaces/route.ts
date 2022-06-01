@@ -1,6 +1,6 @@
-import { Router } from "express";
+import { Router } from 'express';
 
 export interface Route {
-    path: String;
-    router: Router;
+  path: String;
+  router: Router;
 }
