@@ -16,9 +16,10 @@ This is a very simple template for quick-starting an Express microservice/applic
 
 # Routes
 
-There is only a single index route: `/`.
+| Name | Description | Path |  Response |
+| ------------- | ------------- | ------------- | ------------- |
+| index  | Verifies the application is running | `/` | `OK` if application is running |
 
-To hit that route, navigate to `http://localhost:80/` with a browser and verify an `OK` message is returned.
 
 # Docker
 
