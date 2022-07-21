@@ -5,9 +5,7 @@ This is a very simple template for quick-starting an Express microservice/applic
 # Installation
 
 1. Run `npm install` to install the dependencies.
-
-2. Rename the `.env.sample` file to `.env` to make a config file accessible.
-
+2. Run `npm run copy-env:local` to create a `.env` from `.env-local` if `.env` doesn't already exist.
 3. Run `npm start` to start the application.
 
 # Development Mode
@@ -16,13 +14,13 @@ This is a very simple template for quick-starting an Express microservice/applic
 
 # Routes
 
-| Name | Description | Path |  Response |
-| ------------- | ------------- | ------------- | ------------- |
-| index  | Verifies the application is running | `/` | `OK` if application is running |
+| Route | Method | Roles | Response |
+|-------|-------|-------|-------|
+| `/` | GET | * | Returns `OK` if the application is running successfully |
 
 
 # Docker
 
-1. Run `docker build -t template .` to build the image.
+1. Run `docker build -t template-image .` to build the image.
 
-2. Run `docker run --rm --name template template` to run the container.
+2. Run `docker run --rm --name template template-image` to run the container.

@@ -6,7 +6,8 @@
     "build": "tsc",
     "test": "jest --config jestconfig.json",
     "start": "npm run build && ts-node build/server.js",
-    "dev": "npx nodemon ./src/server.ts"
+    "dev": "npx nodemon ./src/server.ts",
+    "copy-env:local": "cp -n .env.local .env || true"
   },
   "dependencies": {
     "debug": "~2.6.9",
