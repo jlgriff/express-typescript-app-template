@@ -1,11 +1,8 @@
-import { Application } from 'express';
 import application from './app';
 import { PORT } from './configs';
-import { Route } from './interfaces/route';
-import indexRoute from './routes';
+import routes from './routes';
 
-const routes: Route[] = [indexRoute()];
+const app = application(routes);
+const server = app.listen(PORT || 80);
 
-const app: Application = application(routes);
-
-app.listen(PORT || 80);
+export default server;

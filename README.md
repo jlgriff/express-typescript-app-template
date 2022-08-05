@@ -14,10 +14,13 @@ This is a very simple template for quick-starting an Express microservice/applic
 
 # Routes
 
-| Route | Method | Roles | Response |
+| Route | Method | Response |
 |-------|-------|-------|-------|
-| `/` | GET | * | Returns `OK` if the application is running successfully |
+| `/` | GET | Returns `OK` if the application is running successfully |
 
+# Testing
+
+Run `npm run test` to run any tests.
 
 # Docker
 

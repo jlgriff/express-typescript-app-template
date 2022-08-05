@@ -1,10 +1,10 @@
 import { NextFunction, Request, Response } from 'express';
 
-const indexController = (
+const indexController = async (
   req: Request,
   res: Response,
   next: NextFunction,
-): void => {
+): Promise<void> => {
   try {
     res.sendStatus(200);
   } catch (error) {

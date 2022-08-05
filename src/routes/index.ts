@@ -10,4 +10,6 @@ const indexRoute = (): Route => {
   return { path, router };
 };
 
-export default indexRoute;
+const routes = [indexRoute()];
+
+export default routes;
