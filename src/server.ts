@@ -1,7 +1,7 @@
 import application from './app';
-import { PORT } from './configs';
+import { port } from './configs';
 
 const app = application();
-const server = app.listen(PORT || 80);
+const server = app.listen(port);
 
 export default server;

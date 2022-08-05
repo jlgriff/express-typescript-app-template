@@ -1,5 +1,5 @@
 import express, { Application } from 'express';
-import { PORT } from './configs';
+import { port } from './configs';
 
 import errorMiddleware from './middleware/error';
 import routes from './routes';
@@ -15,7 +15,7 @@ const application = (): Application => {
 
   app.use(errorMiddleware);
 
-  log('info', `Application is listening on port ${PORT}`);
+  log('info', `Application is listening on port ${port}`);
 
   return app;
 };
