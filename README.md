@@ -20,7 +20,7 @@ This is a very simple template for quick-starting an Express microservice/applic
 
 # Testing
 
-Run `npm run test` to run any tests.
+Run `npm run test` to run tests.
 
 # Docker
 
