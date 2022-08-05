@@ -15,7 +15,7 @@ This is a very simple template for quick-starting an Express microservice/applic
 # Routes
 
 | Route | Method | Response |
-|-------|-------|-------|-------|
+|-------|-------|-------|
 | `/` | GET | Returns `OK` if the application is running successfully |
 
 # Testing
