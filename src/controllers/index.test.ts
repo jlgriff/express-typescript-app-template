@@ -1,8 +1,7 @@
 import supertest from 'supertest';
 import application from '../app';
-import routes from '../routes';
 
-const app = application(routes);
+const app = application();
 
 describe('Test the index controller', () => {
   it('Verify the index endpoint returns OK', (done) => {
