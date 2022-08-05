@@ -4,6 +4,9 @@ config({ path: '.env' });
 
 export const { NODE_ENV, PORT } = process.env;
 
+const defaultEnv = 'development';
+export const environment = NODE_ENV || defaultEnv;
+
 const defaultPort = 80;
 export const port = PORT
   ? parseInt(PORT, 10) || defaultPort

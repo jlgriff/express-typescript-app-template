@@ -1,6 +1,10 @@
 # Introduction
 
-This is a very simple template for quick-starting an Express microservice/application using Typescript.
+This is a simple template for quick-starting an Express microservice/application using Typescript. The goal here is to have an extremely clean template from which to start projects, meaning no warnings, no vulnerabilities, no old versions, etc.
+
+To keep it easily extensible, the only functionality that this project starts with is an index API and an accompanying test. This endpoint is documented below.
+
+This project also aims for as functional of a style as possible, so all of the written code is implemented via exported functions rather than classes.
 
 # Installation
 
