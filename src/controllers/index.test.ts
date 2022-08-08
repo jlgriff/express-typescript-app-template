@@ -1,4 +1,4 @@
-import supertest from 'supertest';
+import agent from 'supertest';
 import application from '../app';
 import { ApplicationConfig } from '../interfaces/config.app';
 
@@ -7,7 +7,7 @@ const app = application(appConfig);
 
 describe('Test the index controller', () => {
   it('Verify the index endpoint returns OK', (done) => {
-    const res: supertest.Test = supertest(app).get('/');
+    const res: agent.Test = agent(app).get('/');
     res.expect(200)
       .expect('OK')
       .end(done);
