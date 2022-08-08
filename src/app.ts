@@ -1,11 +1,11 @@
 import express, { Application } from 'express';
-import { environment, port } from './configs';
+import { ApplicationConfig } from './interfaces/config.app';
 
 import errorMiddleware from './middleware/error';
 import routes from './routes';
 import log from './utilities/logger';
 
-const application = (): Application => {
+const application = (config: ApplicationConfig): Application => {
   const app = express();
 
   app.use(express.json());
@@ -15,7 +15,7 @@ const application = (): Application => {
 
   app.use(errorMiddleware);
 
-  log('info', `Application is running on port ${port} with the ${environment} environment`);
+  log('info', `Application is running on port ${config.port} with the ${config.environment} environment`);
 
   return app;
 };

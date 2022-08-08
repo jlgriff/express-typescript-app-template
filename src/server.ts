@@ -1,7 +1,9 @@
 import application from './app';
-import { port } from './configs';
+import { environment, port } from './configs';
+import { ApplicationConfig } from './interfaces/config.app';
 
-const app = application();
-const server = app.listen(port);
+const appConfig: ApplicationConfig = { port, environment };
+const app = application(appConfig);
+const server = app.listen(appConfig.port);
 
 export default server;
