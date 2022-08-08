@@ -6,18 +6,18 @@ const white = '\x1b[37m%s\x1b[0m';
 /**
  * Determines which color corresponds to a log's level
  */
-const getLogColor = (level: string): string => {
+const getLogger = (level: string): { logger: (...args: any[]) => void, color: string; } => {
   switch (level) {
     case 'debug':
-      return blue;
+      return { logger: console.debug, color: blue };
     case 'info':
-      return white;
+      return { logger: console.info, color: white };
     case 'warn':
-      return yellow;
+      return { logger: console.warn, color: yellow };
     case 'error':
-      return red;
+      return { logger: console.error, color: red };
     default:
-      return white;
+      return { logger: console.info, color: white };
   }
 };
 
@@ -25,7 +25,8 @@ const getLogColor = (level: string): string => {
  * Generates a standardized log in a color corresponding to the log's level
  */
 const log = (level: 'debug' | 'info' | 'warn' | 'error', message: string) => {
-  console.log(getLogColor(level), `${level} | ${message}`);
+  const { logger, color } = getLogger(level);
+  logger(color, `${level} | ${message}`);
 };
 
 export default log;
