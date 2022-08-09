@@ -26,7 +26,7 @@ const getLogger = (level: string): { logger: (...args: any[]) => void, color: st
  */
 const log = (level: 'debug' | 'info' | 'warn' | 'error', message: string) => {
   const { logger, color } = getLogger(level);
-  logger(color, `${level} | ${message}`);
+  logger(color, `${level.padEnd(5, ' ')} | ${message}`);
 };
 
 export default log;
