@@ -2,12 +2,15 @@ const gray = '\x1b[30m%s\x1b[0m';
 const red = '\x1b[31m%s\x1b[0m';
 const yellow = '\x1b[33m%s\x1b[0m';
 const blue = '\x1b[34m%s\x1b[0m';
+const cyan = '\x1b[36m%s\x1b[0m';
 
 /**
  * Determines which color corresponds to a log's level
  */
 const getLogger = (level: string): { logger: (...args: any[]) => void, color: string; } => {
   switch (level) {
+    case 'trace':
+      return { logger: console.trace, color: cyan };
     case 'debug':
       return { logger: console.debug, color: blue };
     case 'info':
@@ -24,7 +27,7 @@ const getLogger = (level: string): { logger: (...args: any[]) => void, color: st
 /**
  * Generates a standardized log in a color corresponding to the log's level
  */
-const log = (level: 'debug' | 'info' | 'warn' | 'error', message: string) => {
+const log = (level: 'trace' | 'debug' | 'info' | 'warn' | 'error', message: string) => {
   const { logger, color } = getLogger(level);
   logger(color, `${level.padEnd(5, ' ')} | ${message}`);
 };
