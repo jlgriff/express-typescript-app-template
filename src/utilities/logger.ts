@@ -25,11 +25,28 @@ const getLogger = (level: string): { logger: (...args: any[]) => void, color: st
 };
 
 /**
- * Generates a standardized log in a color corresponding to the log's level
+ * Determines the calling function at a given parent level
+ *
+ * e.g. This function itself is at parentLevel 1, the function that called it is at parentLevel 2,
+ * and the function that called that one is at parentLevel 3.
  */
-const log = (level: 'trace' | 'debug' | 'info' | 'warn' | 'error', message: string) => {
+const getCallingFunction = (parentLevel: number): string => {
+  const e = new Error();
+  if (e.stack) {
+    const frame = e.stack.split('\n')[parentLevel];
+    const lineNumber = frame.split(':').reverse()[1];
+    const functionName = frame.split(' ')[5];
+    return `${functionName}:${lineNumber}`;
+  }
+  return '';
+};
+
+/**
+ * Generates a standardized formatted log using the given level's corresponding logger
+ */
+const log = (level: 'trace' | 'debug' | 'info' | 'warn' | 'error', message: string, showCallingFunction: boolean = false) => {
   const { logger, color } = getLogger(level);
-  logger(color, `${level.padEnd(5, ' ')} | ${message}`);
+  logger(color, `${level.padEnd(5, ' ')} | ${message} ${showCallingFunction ? `| ${getCallingFunction(3)}` : ''}`);
 };
 
 export default log;
