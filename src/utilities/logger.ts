@@ -46,7 +46,7 @@ const getCallingFunction = (parentLevel: number): string => {
  */
 const log = (level: 'trace' | 'debug' | 'info' | 'warn' | 'error', message: string, showCallingFunction: boolean = false) => {
   const { logger, color } = getLogger(level);
-  logger(color, `${level.padEnd(5, ' ')} | ${message} ${showCallingFunction ? `| ${getCallingFunction(3)}` : ''}`);
+  logger(color, `${level.padEnd(5, ' ')} | ${showCallingFunction ? `${getCallingFunction(3)} | ` : ''}${message}`);
 };
 
 export default log;
