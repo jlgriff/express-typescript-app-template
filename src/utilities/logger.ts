@@ -33,9 +33,18 @@ const getLogger = (level: string): { logger: (...args: any[]) => void, color: st
 const getCallingFunction = (parentLevel: number): string => {
   const e = new Error();
   if (e.stack) {
-    const frame = e.stack.split('\n')[parentLevel];
+    const frame: string = e.stack.split('\n')[parentLevel];
     const lineNumber = frame.split(':').reverse()[1];
-    const functionName = frame.split(' ')[5];
+
+    // Extract the named file near the end of stack trace line
+    let functionName: string = 'unparsable';
+    if (frame.indexOf('/') !== -1) {
+      const [lastFileInFilepath] = frame.split('/').reverse();
+      [functionName] = lastFileInFilepath.split(':');
+    } else if (frame.indexOf('\\') !== -1) {
+      const [lastFileInFilepath] = frame.split('\\').reverse();
+      [functionName] = lastFileInFilepath.split(':');
+    }
     return `${functionName}:${lineNumber}`;
   }
   return '';
