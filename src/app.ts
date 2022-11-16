@@ -1,7 +1,7 @@
 import express, { Application } from 'express';
 
-import errorMiddleware from './middleware/error';
-import routes from './routes';
+import errorMiddleware from './middleware/error.js';
+import routes from './routes/index.js';
 
 const application = (): Application => {
   const app = express();

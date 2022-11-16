@@ -1,7 +1,7 @@
-import application from './app';
-import { environment, port } from './configs';
-import { ApplicationConfig } from './interfaces/config.app';
-import log from './utilities/logger';
+import application from './app.js';
+import { environment, port } from './configs/index.js';
+import { ApplicationConfig } from './interfaces/config.app.js';
+import log from './utilities/logger.js';
 
 const appConfig: ApplicationConfig = { port, environment };
 const app = application();

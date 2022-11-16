@@ -1,5 +1,5 @@
 import agent from 'supertest';
-import application from '../app';
+import application from '../app.js';
 
 const app = application();
 

@@ -2,6 +2,7 @@
   "name": "express-typescript-app",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "build": "tsc",
     "test": "jest --config jestconfig.json",
@@ -32,6 +33,6 @@
     "supertest": "^6.2.4",
     "ts-jest": "^28.0.2",
     "ts-node": "^10.7.0",
-    "typescript": "^4.6.4"
+    "typescript": "^4.9.3"
   }
 }

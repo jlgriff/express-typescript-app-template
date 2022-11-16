@@ -1,7 +1,6 @@
 {
   "env": {
-    "browser": true,
-    "es2021": true,
+    "es2022": true,
     "jest": true
   },
   "extends": [
@@ -19,7 +18,7 @@
     "no-console": "off",
     "import/extensions": [
       2,
-      "never"
+      "always"
     ],
     "import/no-extraneous-dependencies": [
       "error",
@@ -27,6 +26,7 @@
         "devDependencies": true
       }
     ],
+    "import/no-unresolved": [2, { "ignore": ["\\.js$"] }],
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": [
       "error",

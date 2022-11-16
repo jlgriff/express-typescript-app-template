@@ -8,4 +8,5 @@ build
 .env
 
 # miscellaneous
+.vscode
 .DS_Store
