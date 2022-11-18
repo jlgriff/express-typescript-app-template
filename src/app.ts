@@ -6,7 +6,6 @@ import routes from './routes/index.js';
 /**
  * Creates the Express application object with the given configurations
  *
- * @param config - application configurations
  * @returns an Express application
  */
 const application = (): Application => {
