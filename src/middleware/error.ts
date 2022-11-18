@@ -2,7 +2,7 @@ import { NextFunction, Request, Response } from 'express';
 import { HttpException } from '../interfaces/exception.js';
 
 /**
- * Catches and logs any errors that escaped GraphQL error-handling
+ * Catches and logs any errors that were thrown when processing the request
  *
  * @param error - error message and status code
  * @param _req - API request
