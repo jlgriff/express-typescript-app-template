@@ -7,7 +7,7 @@ import { HttpException } from '../interfaces/exception.js';
  * @param error - error message and status code
  * @param _req - API request
  * @param res - API response
- * @param _next - callback function
+ * @param _next - function to call the next middleware
  * @returns an API response with the given status code and error message
  */
 const errorMiddleware = (
