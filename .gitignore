@@ -2,7 +2,7 @@
 node_modules
 
 # build artifact
-build
+dist
 
 # environment configuration file
 .env

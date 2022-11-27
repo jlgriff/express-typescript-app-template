@@ -1,10 +1,10 @@
 {
   "name": "express-typescript-app",
   "version": "1.0.0",
-  "private": true,
+  "license": "MIT",
   "type": "module",
   "scripts": {
-    "build": "tsc",
+    "build": "npx tsc",
     "test": "npm run build && jest --config jestconfig.json",
     "start": "npm run build && ts-node build/server.js",
     "dev": "npx nodemon ./src/server.ts",
