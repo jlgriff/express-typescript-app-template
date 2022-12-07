@@ -1,3 +1,0 @@
-{
-  "presets": ["@babel/preset-env"] // Ensures tests work with ECMAScript modules
-}

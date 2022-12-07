@@ -1,4 +1,4 @@
-import express, { Application } from 'express';
+import express from 'express';
 
 import errorMiddleware from './middleware/error.js';
 import routes from './routes/index.js';
@@ -8,7 +8,7 @@ import routes from './routes/index.js';
  *
  * @returns an Express application
  */
-const application = (): Application => {
+const application = (): express.Application => {
   const app = express();
 
   app.use(express.json());
