@@ -17,8 +17,8 @@
   "scripts": {
     "build": "npx tsc",
     "test": "npm run build && npx mocha dist/test/**/*.js",
-    "start": "npm run build && ts-node dist/server.js",
-    "dev": "npx nodemon ./src/server.ts",
+    "start": "npm run build && ts-node dist/src/server.js",
+    "dev": "npx nodemon ./ts/src/server.ts",
     "copy-env:local": "cp -n .env.local .env || true"
   },
   "dependencies": {
