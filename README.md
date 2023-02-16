@@ -22,9 +22,7 @@ To keep it easily extensible, the only functionality that this project starts wi
 To get this application running locally:
 
 1. Run `npm install` to install the dependencies.
-2. Run `npm run copy-env:local` to create a `.env` from `.env-local` if `.env` doesn't already exist.
-3. Start up a PostgreSQL database on port 5432.
-4. Run `npm start` to start the application.
+2. Run `npm start` to start the application.
 
 ### Running in the cloud
 
